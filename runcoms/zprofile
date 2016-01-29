@@ -17,8 +17,14 @@ fi
 # Editors
 #
 
-export EDITOR='nano'
-export VISUAL='nano'
+if [[ "$OSTYPE" == darwin* ]]; then
+  export EDITOR='/usr/local/bin/vim' # I've mapped vim to Macvim, don't use Macvim for in-terminal editing
+  export VISUAL='/usr/local/bin/vim'
+else
+  export EDITOR='vim'
+  export VISUAL='vim'
+fi
+
 export PAGER='less'
 
 #
