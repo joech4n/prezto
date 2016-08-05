@@ -10,8 +10,8 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #   Joe Chan <@joech4n> 
 #
-# joech4n's modifications:
-# - truncate username and machine name to 1 character
+# joech4n's modifications based on paradox theme: https://github.com/joech4n/prezto/blob/7216430936194d3e900902e04faa8a7f0fd8bf42/modules/prompt/functions/prompt_paradox_setup
+# - truncate username to 1 character
 # - remove powerline font stuff
 #
 # Screenshots (does not include joech4n's updates):
@@ -50,7 +50,9 @@ function prompt_paradox_end_segment {
 }
 
 function prompt_paradox_build_prompt {
-  prompt_paradox_start_segment default default '%(?::%F{red}✘ )%(!:%F{yellow}⚡ :)%(1j:%F{cyan}⚙ :)%F{blue}%1>>%ni%>>%F{red}@%F{green}%1>>%m%>>%f'
+  prompt_paradox_start_segment default default '%(?::%F{red}✘ )%(!:%F{yellow}⚡ :)%(1j:%F{cyan}⚙ :)%F{blue}%1>>%ni%>>%F{red}@%F{green}%m%f'
+  # Original
+  # prompt_paradox_start_segment black default '%(?::%F{red}✘ )%(!:%F{yellow}⚡ :)%(1j:%F{cyan}⚙ :)%F{blue}%n%F{red}@%F{green}%m%f'
   prompt_paradox_start_segment default blue '$_prompt_paradox_pwd'
 
   if [[ -n "$git_info" ]]; then
